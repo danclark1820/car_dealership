@@ -1,0 +1,11 @@
+<h1>Add a manufacturer</h1>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<%= simple_form_for @manufacturer do |f| %>
+  <%= f.input :name %>
+  <%= f.input :country, collection: Manufacturer::COUNTRIES %>
+  <%= f.submit 'Add manufacturer' %>
+<% end %>
+
